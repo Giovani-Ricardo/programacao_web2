@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import json
 
 from django.shortcuts import render
+from .models import Subject,Webpage,AcessRecord
 
 
 # Create your views here.
@@ -21,3 +23,19 @@ def londrina(request):
 def help(request):
     my_dict = {'insert_me' : 'Página de ajuda'}
     return render(request, 'primeiro_projeto/help.html', context=my_dict)
+
+
+def paginas(request):
+    paginas = Webpage.objects.all()
+    context = {
+        'paginas': paginas
+    }
+    return render(request, 'primeiro_projeto/paginas.html', context)
+
+
+def registros_acesso(request):
+    acessos = AcessRecord.objects.all()
+    context = {
+        'acessos': acessos
+    }
+    return render(request, 'primeiro_projeto/registros_acesso.html', context)

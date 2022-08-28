@@ -22,5 +22,7 @@ urlpatterns = [
     path('help', views.help, name='help'),
     path('calculadora', views.calculadora, name='calculadora'),
     path('londrina', views.londrina, name='londrina' ),
+    path('paginas', views.paginas, name='paginas' ),
+    path('registros_acesso', views.registros_acesso, name='registros_acesso' ),
     path('first_app/', include('first_app.urls'))
 ]
