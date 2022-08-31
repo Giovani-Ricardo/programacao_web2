@@ -3,12 +3,32 @@ from __future__ import unicode_literals
 import json
 
 from django.shortcuts import render
+
+from . import forms
+from .forms import FormWebpage,FormAcessRecord
 from .models import Subject,Webpage,AcessRecord
 
 
 # Create your views here.
 def index(request):
-    my_dict = {'insert_me': "Hello, my name is Giovani!"}
+    webpage_form = forms.FormWebpage()
+    # acess_record_form = form.FormAcessrecord()
+
+    my_dict = {
+        'insert_me': "Hello, my name is Giovani!",
+        'webpage_form': webpage_form,
+        # 'acess_record_form' = acess_record_form
+    }
+
+    if request.method == 'POST':
+        webpage_form = forms.FormWebpage(request.POST)
+        if webpage_form.is_valid():
+            webpage_form.save(commit=True)
+            return index(request)
+            # acess_record_form = form.FormAcessrecord()
+        else:
+            print('ERRO FORM INVALID')
+
     return render(request, 'primeiro_projeto/index.html', context=my_dict)
 
 

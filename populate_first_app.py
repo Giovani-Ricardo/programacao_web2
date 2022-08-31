@@ -34,6 +34,7 @@ def populate_webpage(n=5):
         # Pega um subject aleátorio para associar ao novo registro de webpage
         subject = subjects[random.randint(0,4)]
     
+        # Verificar ordem dos parametros
         record = Webpage(url=url,name=name,subject=subject)
         record.save()
 
@@ -54,5 +55,5 @@ if __name__ == '__main__':
     print("")
     #populate_subject()
     #populate_webpage(20)
-    populate_acess_record(100)
+    #populate_acess_record(100)
     print('')
