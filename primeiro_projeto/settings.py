@@ -26,7 +26,10 @@ SECRET_KEY = '!i9b5!xik1)&6=4+sx*#zn=l2kg@v%rlknjjlkiol1!top^+9='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+
+]
 
 
 # Application definition
@@ -119,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 DJANGO_SETTINGS_MODULE='settings.py'
