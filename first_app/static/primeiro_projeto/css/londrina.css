@@ -3,18 +3,29 @@ body {
     line-height: 1.2;
     font-family: Helvetica, sans-serif;
     background-color: gray;
-    background: url(images/noise.png);
-    align-items: center;
+    background: url(/images/noise.png);
 }
 
 #rodape {
     background-color: #e7e7e7;
     text-align: center;
+    justify-self: baseline;
+    align-self: baseline;
+    display: block;
     padding: 15px;
 }
 
 span a {
     font-size: 12px;
+}
+
+a.ler{
+    padding: 5px;
+    margin: 5px;
+}
+
+.conteudo{
+    height: 90vh;
 }
 
 .modal-body {

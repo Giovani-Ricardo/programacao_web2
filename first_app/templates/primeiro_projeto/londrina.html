@@ -1,13 +1,6 @@
 <!doctype html>
-{% load static %}
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'primeiro_projeto/css/londrina.css' %}">
-
+{%extends "primeiro_projeto/layout.html"%}
+{% block script%}
     <script>
         function abrirConteudo() {
             document.getElementById("esconder1").style.display = "block"
@@ -19,114 +12,24 @@
             document.getElementById("link_ler_mais_1").style.display = "inline"
         }
     </script>
+{%endblock%}
 
-    <title>Portal Londrina</title>
-</head>
+{%block title %} Portal Londrina {%endblock%}
 
-<body>
+<!--Jumbotron-->
+{%block jumbotron%}
+   <h1 class="display-3">Bem vindo ao portal Londrina</h1>
+   <span class="m-2">Conheça um pouco mais dessa cidade maravilhosa</span>
+{%endblock%}
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="https://iconape.com/wp-content/png_logo_vector/bandeira-de-londrina-logo.png" width="60" alt="icone da bandeira de londrina"> Londrina
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lugares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Restaurantes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Eventos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link align-self-center" href="#modal-tabela" data-toggle="modal">Dados tabelados</a>
-                </li>
 
-                <div class="modal fade" id="modal-tabela" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="TituloModalCentralizado">Informações</h5>
-                                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!--Inicio tabela-->
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Ano de inauguração</th>
-                                            <th scope="col">Endereço</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Lago Igapó</td>
-                                            <td>1959</td>
-                                            <td>R. Lima, 1 - Guanabara, Londrina - PR, 86015-010</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jardim botânico</td>
-                                            <td>2008</td>
-                                            <td>Av. dos Expedicionários, 1999 - Vivendas do Arvoredo, Londrina - PR, 86047-575
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Parque Arthur Thomas</td>
-                                            <td>1987</td>
-                                            <td>R. da Natureza, 155 - Jardim Piza, Londrina - PR, 86041-050</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="navbar-text justify-content-end">
-
-                </span>
-
-            </ul>
-
-        </div>
-    </nav>
-
-    <!--Jumbotron-->
-    <div class="row mb-3 painel">
-        <div class="col-md-12">
-            <div class="container-fluid p-5 text-dark">
-                <h1 class="display-3">Bem vindo ao portal Londrina</h1>
-                <span class="m-2">Conheça um pouco mais dessa cidade maravilhosa</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <h1 class="display-6 mx-3 mb-2 text-black text-opacity-25">Destaques</h1>
-        <hr class="expand">
-    </div>
-
+{%block conteudo%}
     <!--Inicio conteudo-->
     <div class="container">
 
         <div class="row mb-3">
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://cdn-ckihf.nitrocdn.com/lNerYKAWFyeaNhnoqklrXNstKBvYqfku/assets/static/optimized/rev-be38c59/wp-content/uploads/2021/02/londrina.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Lago Igapo</h3>
@@ -214,8 +117,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://londrinando.com/uploads/gerenciador/WhatsApp%20Image%202019-12-13%20at%2012.28.00%20(2).jpg?1576267783754" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Jardim Botânico</h3>
@@ -275,8 +178,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://24h.com.br/wp-content/uploads/2022/01/cf699d474d3f293f15540edd1021c04a.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Parque Arthur Thomas</h3>
@@ -289,8 +192,8 @@
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://portal.uel.br/cultura/media/museu_historico.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Museu Histórico de Londrina</h3>
@@ -301,14 +204,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1GzPiXmxL-rlVI7tThAZrddbP5EyGK83UwA&usqp=CAU" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Praça Tomi Nakagawa</h3>
                         <p class="card-text">
                             Construída na área central de Londrina, a Praça do Centenário da Imigração Japonesa Tomi Nakagawa é uma exposição de cultura e símbolos a céu aberto. A obra construída pela Prefeitura de Londrina com recursos
-                            <span title="Ler mais"> <a id="link_ler_mais_1" href="javascript:abrirConteudo()">Ler
+                            <br>
+                            <span title="Ler mais"> <a id="link_ler_mais_1" class="ler" href="javascript:abrirConteudo()">Ler
                                     mais</a></span>
 
 
@@ -317,15 +221,16 @@
                                 inauguração aconteceu em 22/06/2008 com a presença do príncipe herdeiro do Japão,
                                 Naruhito,
                                 e do vice-presidente da República, José Alencar.
-                                <a id="link_ler_menos_1" href="javascript:esconderConteudo()" onclick="">
+                                <br>
+                                <a id="link_ler_menos_1" class="ler" href="javascript:esconderConteudo()" onclick="">
                                     Ler menos</a>
                             </span>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 22rem;">
+            <div class="col-sm-4">
+                <div class="card" style="width: 21rem;">
                     <img src="https://s2.glbimg.com/lEeHLnHR7QUflJoWW4WrJ40pXEY=/0x0:961x531/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/b/J/VCY1TzTIiZBJANWft1Sw/expolondrina-1711.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">Exposição Agropecuária</h3>
@@ -338,15 +243,6 @@
         </div>
     </div>
     <!--fim conteudo-->
+{%endblock%}
+    
 
-    <footer id="rodape" class="">
-        <span>Todos os direitos reservados - 2022 &copy</span>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-</body>
-
-</html>

@@ -90,13 +90,11 @@ function passaValor(tipo, valor) {
     }
 }
 
-
-document.addEventListener("keyup", function(e) {
+document.getElementById('calculadora').addEventListener("keyup", function(e) {
 
     let valores = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.']
     let operadores = ['/', '*', '-', '+', '.', 'Enter']
     tecla = e.key;
-
     let visor = document.getElementById('visor')
 
     if (valores.includes(tecla)) {
