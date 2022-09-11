@@ -4,7 +4,8 @@
 
 {%block jumbotron%}
     <h1 class="display-3">Hello world!!!</h1>
-    <span class="m-2">{{ insert_me }}</span>
+    <span class="m-2">{{ insert_me|cut:" "}}</span>
+    <h4 class="m-2">Hoje é dia: {{ data_atual|date:"d/m/Y" }}</h4>
 {%endblock%}
 
 

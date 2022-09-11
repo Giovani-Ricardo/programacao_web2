@@ -1,2 +1,4 @@
 .idea
-primeiro_projeto/__pycache__/settings.cpython-39.pyc
+__pycache__/
+first_app/__pycache__/
+

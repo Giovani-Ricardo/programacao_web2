@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import json
-
+from datetime import date
 from django.shortcuts import render
 
 from . import forms
@@ -12,11 +12,13 @@ from .models import Subject,Webpage,AcessRecord
 # Create your views here.
 def index(request):
     webpage_form = forms.FormWebpage()
+    data_atual = date.today()
     # acess_record_form = form.FormAcessrecord()
 
     my_dict = {
         'insert_me': "Hello, my name is Giovani!",
         'webpage_form': webpage_form,
+        'data_atual':data_atual
         # 'acess_record_form' = acess_record_form
     }
 
